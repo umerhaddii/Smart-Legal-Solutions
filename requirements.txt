@@ -1,0 +1,21 @@
+# Core AI dependencies
+langchain  # Latest stable version of langchain
+langchain-core  # Compatible version for langchain 0.0.350
+langchain-google-genai  # Add this line for Google GenAI integration
+
+# Web interface
+streamlit>=1.41.1  # Latest version of Streamlit
+
+# PDF processing
+PyMuPDF>=1.25.1  # Latest version of PyMuPDF
+pytesseract>=0.3.13  # Latest version of pytesseract
+pdf2image>=1.17.0  # Latest version of pdf2image
+
+# PDF generation
+fpdf2>=2.7.6  # Latest version for PDF creation
+
+# Environment variables
+python-dotenv>=1.0.1  # Latest version of python-dotenv
+
+# Async support
+aiohttp>=3.9.0  # Latest version of aiohttp
