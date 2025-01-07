@@ -7,12 +7,13 @@ from src.document_processor import LegalDocumentProcessor
 import json
 from datetime import datetime
 from fpdf import FPDF, XPos, YPos  # Add XPos, YPos import
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
-
-# Set up API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAjzI4_3K4nh0ZdVcIyhoxah_Pi_hX6jjs"
 
 def initialize_session_state():
     if "messages" not in st.session_state:
