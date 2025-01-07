@@ -68,6 +68,7 @@ temp_*
 # *.pdf
 
 # Streamlit
+.streamlit/
 .streamlit/secrets.toml
 
 # Tests
