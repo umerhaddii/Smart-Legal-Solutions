@@ -144,6 +144,9 @@ def process_request(request_type, question=None):
 
 def main():
     st.title("Smart Legal Solutions")
+    st.markdown("#### Automated legal document analysis, lawsuit drafting, and contract review - all in one platform")
+    st.divider()  # Add a divider for better visual separation
+    
     initialize_session_state()
 
     # Sidebar
