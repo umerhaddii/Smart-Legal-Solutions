@@ -287,34 +287,53 @@ async def legal_lawsuit_response_agent(document: str) -> str:
         return f"Error generating lawsuit response: {str(e)}"
 
 async def legal_contract_analysis_agent(document: str) -> str:
-    """Analyze legal contracts to identify terms, risks, and potential issues."""
+    """Analyze legal contracts following Serbian legal standards."""
     try:
         doc_chunks = chunk_document(document)
         analysis_parts = []
         for chunk in doc_chunks:
             messages = create_messages(
-                """Perform a comprehensive contract analysis. Include:
-                1. Essential Terms Analysis
-                   - Identify missing or incomplete terms
-                   - Evaluate payment terms and conditions
-                   - Review performance obligations
-                
-                2. Risk Assessment
-                   - Identify potential legal risks
-                   - Highlight liability concerns
-                   - Review indemnification clauses
-                
-                3. Compliance Check
-                   - Verify regulatory compliance
-                   - Check for standard legal requirements
-                   - Identify jurisdiction-specific issues
-                
-                4. Recommendations
-                   - Suggest improvements
-                   - Highlight areas needing clarification
-                   - Propose risk mitigation strategies
-                
-                Document: {document}""",
+                """Vi ste AI analitičar pravnih ugovora specijalizovan za srpsko pravo.
+                Molimo vas da analizirate sledeći ugovor prema ovim kriterijumima:
+
+                1. Osnovni elementi ugovora:
+                   - Ponuda i prihvatanje
+                   - Protivusluga i namera
+                   - Sposobnost ugovaranja
+                   - Usklađenost sa Zakonom o obligacionim odnosima
+
+                2. Ključne klauzule:
+                   - Identifikacija i objašnjenje važnih odredbi
+                   - Procena jasnoće i izvršivosti
+                   - Preporuke za poboljšanje
+                   - Potencijalne pravne nejasnoće
+
+                3. Pravna usklađenost:
+                   - Provera usklađenosti sa srpskim zakonima
+                   - Reference na relevantne propise
+                   - Usklađenost sa sudskom praksom
+                   - Regulatorna pitanja
+
+                4. Procena rizika:
+                   - Pravni rizici
+                   - Finansijski rizici
+                   - Operativni rizici
+                   - Preporuke za ublažavanje
+
+                5. Posebne odredbe:
+                   - Izbor prava i nadležnosti
+                   - Međunarodni aspekti (ako postoje)
+                   - Specifični sektorski zahtevi
+                   - Zaštita podataka i poverljivost
+
+                6. Preporuke za poboljšanje:
+                   - Konkretni predlozi izmena
+                   - Dodatne zaštitne mere
+                   - Usklađivanje sa najboljom praksom
+                   - Pravna optimizacija
+
+                Analizirajte sledeći ugovor:
+                {document}""",
                 chunk
             )
             response = model.invoke(messages)
