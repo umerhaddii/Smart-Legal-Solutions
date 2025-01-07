@@ -1,13 +1,17 @@
 import os
 import logging
+from dotenv import load_dotenv
 # from langchain_mistralai import ChatMistralAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, SystemMessage
 
-# Initialize Mistral AI
+# Load environment variables
+load_dotenv()
+
+# Initialize model with environment variable
 model = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash-8b",  # Valid model name, others include: mistral-small, mistral-medium
-    google_api_key="AIzaSyAjzI4_3K4nh0ZdVcIyhoxah_Pi_hX6jjs"
+    model="gemini-1.5-flash-8b",
+    google_api_key=os.getenv("GOOGLE_API_KEY")
 )
 
 # Define prompt templates and message creation
