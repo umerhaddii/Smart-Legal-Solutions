@@ -142,10 +142,87 @@ def process_request(request_type, question=None):
         st.error(error_msg)
         return error_msg
 
+def show_user_manual():
+    with st.expander("📖 User Manual - How to Use Smart Legal Solutions"):
+        st.markdown("""
+        # Smart Legal Solutions - User Manual
+
+        ## 🚀 Getting Started
+        1. **Upload Documents**
+           * Use the sidebar's "Upload legal documents" section
+           * Supports PDF files only
+           * Multiple documents can be uploaded simultaneously
+
+        2. **Process Documents**
+           * Click "Process" button next to each uploaded document
+           * Wait for confirmation message
+           * Document is ready for analysis when processing completes
+
+        ## 💡 Available Features
+
+        ### 1. Document Summary
+        * Generates comprehensive legal document summaries
+        * Includes: Case overview, key facts, legal issues, arguments, and conclusions
+        * Perfect for quick document understanding
+
+        ### 2. Legal Appeal Generation
+        * Creates structured legal appeals
+        * Includes proper formatting and legal terminology
+        * Follows Serbian legal standards
+
+        ### 3. Legal Document Review
+        * Performs detailed document analysis
+        * Highlights key clauses and obligations
+        * Identifies potential risks and compliance issues
+
+        ### 4. Lawsuit Generation
+        * Creates formal lawsuit documents
+        * Includes all necessary legal sections
+        * Follows proper legal formatting
+
+        ### 5. Lawsuit Response
+        * Generates formal responses to lawsuits
+        * Addresses key arguments
+        * Includes counter-arguments and evidence sections
+
+        ### 6. Contract Analysis
+        * Detailed contract review
+        * Identifies risks and obligations
+        * Provides improvement recommendations
+
+        ### 7. Interactive Chat Assistant
+        * Ask specific questions about documents
+        * Get clarifications on legal terms
+        * Receive guided assistance
+
+        ## 🔍 How to Use Each Feature
+        1. **Select Document**: Choose your processed document
+        2. **Choose Action**: Use the dropdown menu to select desired analysis
+        3. **Review Results**: Results appear in main window
+        4. **Download**: Use download buttons for saving results
+
+        ## 💾 Saving Your Work
+        * All generated documents can be downloaded as PDFs
+        * Use the download buttons below each analysis
+        * Files are named with timestamp for easy organization
+
+        ## ⚠️ Important Notes
+        * Keep documents under 200MB
+        * Supported format: PDF only
+        * Processing time varies with document size
+        * All data is processed securely
+        """)
+
 def main():
     st.title("Smart Legal Solutions")
     st.markdown("#### Automated legal document analysis, lawsuit drafting, and contract review - all in one platform")
-    st.divider()  # Add a divider for better visual separation
+    
+    # Add user manual expander
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        show_user_manual()
+    
+    st.divider()
     
     initialize_session_state()
 
