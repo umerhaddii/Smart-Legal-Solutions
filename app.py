@@ -15,6 +15,9 @@ load_dotenv()
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
+# Get API key from Streamlit secrets
+os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+
 def initialize_session_state():
     if "messages" not in st.session_state:
         st.session_state.messages = []
