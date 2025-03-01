@@ -85,3 +85,10 @@ smart-legal-solutions/
 - Context-aware responses
 - Support for specific action keywords
 
+---
+
+[![Watch the video](https://img.youtube.com/vi/QtI5liAOX84/maxresdefault.jpg)](https://youtu.be/QtI5liAOX84)
+
+
+- 
+
